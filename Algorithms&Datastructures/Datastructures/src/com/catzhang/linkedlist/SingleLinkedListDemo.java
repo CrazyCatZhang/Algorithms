@@ -1,5 +1,7 @@
 package com.catzhang.linkedlist;
 
+import java.util.Stack;
+
 /**
  * @author: crazycatzhang
  * @date: 2020/7/27 8:11 下午
@@ -14,18 +16,80 @@ public class SingleLinkedListDemo {
         singleLinkedList.addNodeOrder(new HeroNode(3,"吴用","智多星"));
         singleLinkedList.show();
         System.out.println();
-        singleLinkedList.modifyNode(new HeroNode(1,"小江","及时雨啊哈"));
-        singleLinkedList.show();
-        System.out.println();
-        singleLinkedList.deleteNode(2);
-        singleLinkedList.show();
+//        singleLinkedList.modifyNode(new HeroNode(1,"小江","及时雨啊哈"));
+//        singleLinkedList.show();
+//        System.out.println();
+//        singleLinkedList.deleteNode(2);
+//        singleLinkedList.show();
+//        reverseList(singleLinkedList.getHead());
+//        singleLinkedList.show();
+//        System.out.println(getLength(singleLinkedList.getHead()));
+//        System.out.println(findLastNode(singleLinkedList.getHead(),3));
+        reversePrint(singleLinkedList.getHead());
+    }
+
+    //Reverse print the LinkedList
+    public static void reversePrint(HeroNode head){
+        Stack<HeroNode> heroNodeStack = new Stack<>();
+        HeroNode temp = head.next;
+        while (temp != null){
+            heroNodeStack.add(temp);
+            temp = temp.next;
+        }
+        while (heroNodeStack.size() > 0){
+            System.out.println(heroNodeStack.pop());
+        }
+    }
+
+    //Reverse the LinkedList
+    public static void reverseList(HeroNode head){
+        if (head.next == null || head.next.next == null){
+            return;
+        }
+        HeroNode reverseHead = new HeroNode(0,"","");
+        HeroNode current = head.next;
+        HeroNode next = null;
+        while (current != null){
+            next = current.next;
+            current.next = reverseHead.next;
+            reverseHead.next = current;
+            current = next;
+        }
+        head.next = reverseHead.next;
+    }
+
+    //Find the K of the last node
+    public static HeroNode findLastNode(HeroNode head,int index){
+        if (head.next == null || index > getLength(head)){
+            return null;
+        }
+        HeroNode temp = head.next;
+        for (int i = 0; i < getLength(head) - index; i++) {
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+    //Get the number of the LinkedList data
+    public static int getLength(HeroNode head){
+        HeroNode temp = head;
+        int count = 0;
+        while (temp.next != null){
+            count++;
+            temp = temp.next;
+        }
+        return count;
     }
 }
 
 //Define SingleLinkedList
 class SingleLinkedList{
     //Define HeadNode
-    HeroNode head = new HeroNode(0,"","");
+    private HeroNode head = new HeroNode(0,"","");
+
+    public HeroNode getHead() {
+        return head;
+    }
 
     //Add Node
     public void addNode(HeroNode node){
