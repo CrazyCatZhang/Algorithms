@@ -3,7 +3,7 @@ package com.catzhang.linkedlist;
 /**
  * @author: crazycatzhang
  * @date: 2020/7/28 11:30 AM
- * @description:
+ * @description: Basic realization of bidirectional linked list
  */
 public class DoubleLinkedListDemo {
     public static void main(String[] args) {
