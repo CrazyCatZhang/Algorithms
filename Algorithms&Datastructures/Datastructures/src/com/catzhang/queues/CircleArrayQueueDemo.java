@@ -10,10 +10,10 @@ import java.util.Scanner;
 public class CircleArrayQueueDemo {
     public static void main(String[] args) {
         CircleArrayQueue circleArrayQueue = new CircleArrayQueue(5);
-        while (true){
+        while (true) {
             show();
             int select = new Scanner(System.in).nextInt();
-            switch (select){
+            switch (select) {
                 case 1:
                     try {
                         circleArrayQueue.showQueue();
@@ -44,7 +44,8 @@ public class CircleArrayQueueDemo {
             }
         }
     }
-    public static void show(){
+
+    public static void show() {
         System.out.println("1.显示队列");
         System.out.println("2.添加队列");
         System.out.println("3.获取队列");
@@ -52,30 +53,30 @@ public class CircleArrayQueueDemo {
     }
 }
 
-class CircleArrayQueue{
+class CircleArrayQueue {
     private int capacity; //Define array capacity
     private int front; //Defines a pointer to the first element of an array
     private int tails; //Defines the last pointer to the last element of the array
-    private int [] arrayQueue; //Defines an array to store the data
+    private int[] arrayQueue; //Defines an array to store the data
 
-    public CircleArrayQueue(int capacity){
+    public CircleArrayQueue(int capacity) {
         this.capacity = capacity;
         this.arrayQueue = new int[this.capacity];
     }
 
     //Determine if the queue is empty
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return front == tails;
     }
 
     //Determine if the queue is full
-    public boolean isFull(){
+    public boolean isFull() {
         return (tails + 1) % capacity == front;
     }
 
     //add data to the queue
-    public void addQueue(int data){
-        if (isFull()){
+    public void addQueue(int data) {
+        if (isFull()) {
             throw new RuntimeException("The queue is full...");
         }
         arrayQueue[tails] = data;
@@ -83,8 +84,8 @@ class CircleArrayQueue{
     }
 
     //Get the data of the front node and get out of the queue
-    public int getFrontData(){
-        if (isEmpty()){
+    public int getFrontData() {
+        if (isEmpty()) {
             throw new RuntimeException("The queue is empty...");
         }
         int values = arrayQueue[front];
@@ -93,8 +94,8 @@ class CircleArrayQueue{
     }
 
     //Displays all the data for the queue
-    public void showQueue(){
-        if (isEmpty()){
+    public void showQueue() {
+        if (isEmpty()) {
             throw new RuntimeException("The queue is empty...");
         }
         for (int i = front; i < front + getSize(); i++) {
@@ -102,7 +103,7 @@ class CircleArrayQueue{
         }
     }
 
-    public int getSize(){
+    public int getSize() {
         int size = (tails + capacity - front) % capacity;
         return size;
     }

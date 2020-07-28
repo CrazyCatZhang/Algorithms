@@ -21,7 +21,7 @@ public class SparseArrays {
             for (int values :
                     data) {
                 System.out.print(values + "\t");
-                if (values != 0){
+                if (values != 0) {
                     sum++;
                 }
             }
@@ -29,7 +29,7 @@ public class SparseArrays {
         }
         System.out.println();
         //Creat SparseArrays
-        int [][] sparseArrays = new int[sum + 1][3];
+        int[][] sparseArrays = new int[sum + 1][3];
         //Assign a value to a sparse array
         sparseArrays[0][0] = chessArray1.length;
         sparseArrays[0][1] = chessArray1[0].length;
@@ -37,7 +37,7 @@ public class SparseArrays {
         int count = 0;
         for (int i = 0; i < chessArray1.length; i++) {
             for (int j = 0; j < chessArray1[0].length; j++) {
-                if (chessArray1[i][j] != 0){
+                if (chessArray1[i][j] != 0) {
                     count++;
                     sparseArrays[count][0] = i;
                     sparseArrays[count][1] = j;
@@ -58,7 +58,7 @@ public class SparseArrays {
         System.out.println();
         //2.SparseArrays -> Two-dimensional Arrays
         //Creat new chessArray
-        int [][] chessArray2 = new int[sparseArrays[0][0]][sparseArrays[0][1]];
+        int[][] chessArray2 = new int[sparseArrays[0][0]][sparseArrays[0][1]];
 
         //Through the sparseArrays And assign value to chessArray2
         for (int i = 1; i < sparseArrays.length; i++) {
