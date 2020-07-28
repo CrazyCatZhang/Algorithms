@@ -10,28 +10,28 @@ public class Josepfu {
         CircleSingleLinkedList circleSingleLinkedList = new CircleSingleLinkedList();
         circleSingleLinkedList.addNode(5);
         circleSingleLinkedList.show();
-        circleSingleLinkedList.countBoy(5,1,2);
+        circleSingleLinkedList.countBoy(5, 1, 2);
     }
 }
 
 //Define CircleSingleLinkedList
-class CircleSingleLinkedList{
+class CircleSingleLinkedList {
     private Boy first = null;
 
     //Add Node to the list
-    public void addNode(int num){
-        if (num < 2){
+    public void addNode(int num) {
+        if (num < 2) {
             System.out.println("There is an error in the input data...");
             return;
         }
         Boy curBoy = null;
         for (int i = 1; i <= num; i++) {
             Boy boy = new Boy(i);
-            if (i == 1){
+            if (i == 1) {
                 first = boy;
                 first.setNext(first);
                 curBoy = first;
-            }else {
+            } else {
                 curBoy.setNext(boy);
                 boy.setNext(first);
                 curBoy = boy;
@@ -40,15 +40,15 @@ class CircleSingleLinkedList{
     }
 
     //Through the list
-    public void show(){
-        if (first == null){
+    public void show() {
+        if (first == null) {
             System.out.println("The list is empty...");
             return;
         }
         Boy curBoy = first;
-        while (true){
+        while (true) {
             System.out.println(curBoy);
-            if (curBoy.getNext() == first){
+            if (curBoy.getNext() == first) {
                 break;
             }
             curBoy = curBoy.getNext();
@@ -64,14 +64,14 @@ class CircleSingleLinkedList{
      * @date: 2020/7/28 8:13 PM
      * @description: Josepfu Question ones with queue
      */
-    public void countBoy(int num,int key,int count){
-        if (first == null || key < 1 || key > num){
+    public void countBoy(int num, int key, int count) {
+        if (first == null || key < 1 || key > num) {
             System.out.println("There is an error in the input data...");
             return;
         }
         Boy helper = first;
-        while (true){
-            if (helper.getNext() == first){
+        while (true) {
+            if (helper.getNext() == first) {
                 break;
             }
             helper = helper.getNext();
@@ -80,8 +80,8 @@ class CircleSingleLinkedList{
             first = first.getNext();
             helper = helper.getNext();
         }
-        while (true){
-            if (helper == first){
+        while (true) {
+            if (helper == first) {
                 break;
             }
             for (int i = 0; i < count - 1; i++) {
@@ -97,7 +97,7 @@ class CircleSingleLinkedList{
 }
 
 //Define Boy Node
-class Boy{
+class Boy {
     private int id;
     private Boy next;
 
