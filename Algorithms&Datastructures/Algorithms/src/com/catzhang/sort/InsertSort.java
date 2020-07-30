@@ -9,17 +9,17 @@ import java.util.Arrays;
  */
 public class InsertSort {
     public static void main(String[] args) {
-        int [] arr = {101,34,119,1,-1,89};
+        int[] arr = {101, 34, 119, 1, -1, 89};
         insertSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
     //Define InsertSort method
-    public static void insertSort(int [] arr){
+    public static void insertSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             int insertVal = arr[i];
             int insertIndex = i - 1;
-            while (insertIndex >= 0 && insertVal < arr[insertIndex]){
+            while (insertIndex >= 0 && insertVal < arr[insertIndex]) {
                 arr[insertIndex + 1] = arr[insertIndex];
                 insertIndex--;
             }
