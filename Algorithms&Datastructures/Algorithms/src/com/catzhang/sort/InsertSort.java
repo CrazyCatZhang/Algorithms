@@ -23,7 +23,9 @@ public class InsertSort {
                 arr[insertIndex + 1] = arr[insertIndex];
                 insertIndex--;
             }
-            arr[insertIndex + 1] = insertVal;
+            if (insertIndex + 1 != i) {
+                arr[insertIndex + 1] = insertVal;
+            }
         }
     }
 }
