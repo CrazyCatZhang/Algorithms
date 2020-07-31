@@ -25,6 +25,14 @@ public class BinaryTreeDemo {
         binaryTree.middleOrder();
         System.out.println("The PostOrder is: ");
         binaryTree.postOrder();
+        System.out.println();
+
+        System.out.println("The PreOrderSearch is: ");
+        System.out.println(binaryTree.preOrderSearch(5));
+        System.out.println("The MiddleOrderSearch is: ");
+        System.out.println(binaryTree.middleOrderSearch(5));
+        System.out.println("The PostOrderSearch is: ");
+        System.out.println(binaryTree.postOrderSearch(5));
     }
 }
 
@@ -57,6 +65,30 @@ class BinaryTree {
             this.root.postOrder();
         } else {
             System.out.println("The BinaryTree is empty...");
+        }
+    }
+
+    public HeroNode preOrderSearch(int id) {
+        if (this.root != null) {
+            return this.root.preOrderSearch(id);
+        } else {
+            return null;
+        }
+    }
+
+    public HeroNode middleOrderSearch(int id) {
+        if (this.root != null) {
+            return this.root.middleOrderSearch(id);
+        } else {
+            return null;
+        }
+    }
+
+    public HeroNode postOrderSearch(int id) {
+        if (this.root != null) {
+            return this.root.postOrderSearch(id);
+        } else {
+            return null;
         }
     }
 }
@@ -144,5 +176,62 @@ class HeroNode {
             this.right.postOrder();
         }
         System.out.println(this);
+    }
+
+    //Define PreOrderSearch method
+    public HeroNode preOrderSearch(int id) {
+        if (this.id == id) {
+            return this;
+        }
+        HeroNode temp = null;
+        if (this.left != null) {
+            temp = this.left.preOrderSearch(id);
+        }
+        if (temp != null) {
+            return temp;
+        }
+        if (this.right != null) {
+            temp = this.right.preOrderSearch(id);
+        }
+        return temp;
+    }
+
+    //Define MiddleOrderSearch method
+    public HeroNode middleOrderSearch(int id) {
+        HeroNode temp = null;
+        if (this.left != null) {
+            temp = this.left.middleOrderSearch(id);
+        }
+        if (temp != null) {
+            return temp;
+        }
+        if (this.id == id) {
+            return this;
+        }
+        if (this.right != null) {
+            temp = this.right.middleOrderSearch(id);
+        }
+        return temp;
+    }
+
+    //Define PostOrderSearch method
+    public HeroNode postOrderSearch(int id) {
+        HeroNode temp = null;
+        if (this.left != null) {
+            temp = this.left.postOrderSearch(id);
+        }
+        if (temp != null) {
+            return temp;
+        }
+        if (this.right != null) {
+            temp = this.right.postOrderSearch(id);
+        }
+        if (temp != null) {
+            return temp;
+        }
+        if (this.id == id) {
+            return this;
+        }
+        return temp;
     }
 }
