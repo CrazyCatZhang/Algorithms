@@ -16,7 +16,7 @@ public class BinarySearch {
 
     //Define BinarySearch method
     public static ArrayList<Integer> binarySearch(int[] arr, int left, int right, int findValue) {
-        if (left > right) {
+        if (left > right || findValue < arr[0] || findValue > arr[arr.length - 1]) {
             return new ArrayList<Integer>();
         }
         int mid = (left + right) / 2;
