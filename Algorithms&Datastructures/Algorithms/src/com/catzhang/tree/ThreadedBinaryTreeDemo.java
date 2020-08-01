@@ -20,13 +20,29 @@ public class ThreadedBinaryTreeDemo {
         node2.setRight(node5);
         node3.setLeft(node6);
 
+        node2.setParent(root);
+        node3.setParent(root);
+        node4.setParent(node2);
+        node5.setParent(node2);
+        node6.setParent(node3);
+
         ThreadedBinaryTree threadedBinaryTree = new ThreadedBinaryTree();
         threadedBinaryTree.setRoot(root);
 
+        threadedBinaryTree.preOrderThreadedBinaryTree();
+        System.out.println("The PreOrderThreadedBinaryTree is: ");
+        threadedBinaryTree.preThreadedThrough();
+        System.out.println();
+
 //        threadedBinaryTree.middleOrderThreadedBinaryTree();
-        threadedBinaryTree.postOrderThreadedBinaryTree();
-        System.out.println(node5.getLeft());
-        System.out.println(node5.getRight());
+//        System.out.println("The MiddleOrderThreadedBinaryTree is: ");
+//        threadedBinaryTree.middleThreadedThrough();
+//        System.out.println();
+
+//        threadedBinaryTree.postOrderThreadedBinaryTree();
+//        System.out.println("The PostOrderThreadedBinaryTree is: ");
+//        threadedBinaryTree.postThreadedThrough();
+//        System.out.println();
 
 
     }
@@ -182,6 +198,64 @@ class ThreadedBinaryTree {
         }
         pre = node;
     }
+
+    //Define Through PreOrderThreadedBinaryTree method
+    public void preThreadedThrough() {
+        TreeNode node = root;
+        while (node != null) {
+            while (node.getLeftType() == 0) {
+                System.out.println(node);
+                node = node.getLeft();
+            }
+            System.out.println(node);
+            node = node.getRight();
+        }
+    }
+
+    //Define Through MiddleOrderThreadedBinaryTree method
+    public void middleThreadedThrough() {
+        TreeNode node = root;
+        while (node != null) {
+            while (node.getLeftType() == 0) {
+                node = node.getLeft();
+            }
+            System.out.println(node);
+            while (node.getRightType() == 1) {
+                node = node.getRight();
+                System.out.println(node);
+            }
+            node = node.getRight();
+        }
+    }
+
+    //Define Through PostOrderThreadedBinaryTree method
+    public void postThreadedThrough() {
+        TreeNode node = root;
+        while (node != null && node.getLeftType() == 0) {
+            node = node.getLeft();
+        }
+        while (node != null) {
+            if (node.getRightType() == 1) {
+                System.out.println(node);
+                pre = node;
+                node = node.getRight();
+            } else {
+                if (node.getRight() == pre) {
+                    System.out.println(node);
+                    if (node == root) {
+                        return;
+                    }
+                    pre = node;
+                    node = node.getParent();
+                } else {
+                    node = node.getRight();
+                    while (node != null && node.getLeftType() == 0) {
+                        node = node.getLeft();
+                    }
+                }
+            }
+        }
+    }
 }
 
 //Define TreeNode
@@ -198,6 +272,16 @@ class TreeNode {
     //if rightType == 0 => Indicates that it points to the right subtree
     //if rightType == 1 => Indicates that it points to the successor node
     private int rightType;
+
+    private TreeNode parent;
+
+    public TreeNode getParent() {
+        return parent;
+    }
+
+    public void setParent(TreeNode parent) {
+        this.parent = parent;
+    }
 
     public int getLeftType() {
         return leftType;
