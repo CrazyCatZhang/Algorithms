@@ -21,18 +21,23 @@ public class BinaryTreeDemo {
 
         System.out.println("The PreOrder is: ");
         binaryTree.preOrder();
-        System.out.println("The MiddleOrder is: ");
-        binaryTree.middleOrder();
-        System.out.println("The PostOrder is: ");
-        binaryTree.postOrder();
-        System.out.println();
+//        System.out.println("The MiddleOrder is: ");
+//        binaryTree.middleOrder();
+//        System.out.println("The PostOrder is: ");
+//        binaryTree.postOrder();
+//        System.out.println();
+//
+//        System.out.println("The PreOrderSearch is: ");
+//        System.out.println(binaryTree.preOrderSearch(5));
+//        System.out.println("The MiddleOrderSearch is: ");
+//        System.out.println(binaryTree.middleOrderSearch(5));
+//        System.out.println("The PostOrderSearch is: ");
+//        System.out.println(binaryTree.postOrderSearch(5));
 
-        System.out.println("The PreOrderSearch is: ");
-        System.out.println(binaryTree.preOrderSearch(5));
-        System.out.println("The MiddleOrderSearch is: ");
-        System.out.println(binaryTree.middleOrderSearch(5));
-        System.out.println("The PostOrderSearch is: ");
-        System.out.println(binaryTree.postOrderSearch(5));
+        binaryTree.deleteNode(5);
+        System.out.println();
+        binaryTree.preOrder();
+
     }
 }
 
@@ -89,6 +94,18 @@ class BinaryTree {
             return this.root.postOrderSearch(id);
         } else {
             return null;
+        }
+    }
+
+    public void deleteNode(int id){
+        if (this.root != null){
+            if (this.root.getId() == id){
+                this.root = null;
+            }else {
+                this.root.deleteNode(id);
+            }
+        }else {
+            System.out.println("The tree is empty...");
         }
     }
 }
@@ -233,5 +250,23 @@ class HeroNode {
             return this;
         }
         return temp;
+    }
+
+    //Define DeleteNode method
+    public void deleteNode(int id){
+        if (this.left != null && this.left.id == id){
+            this.left = null;
+            return;
+        }
+        if (this.right != null && this.right.id == id){
+            this.right = null;
+            return;
+        }
+        if (this.left != null){
+            this.left.deleteNode(id);
+        }
+        if (this.right != null){
+            this.right.deleteNode(id);
+        }
     }
 }
