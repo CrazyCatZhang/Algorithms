@@ -97,14 +97,14 @@ class BinaryTree {
         }
     }
 
-    public void deleteNode(int id){
-        if (this.root != null){
-            if (this.root.getId() == id){
+    public void deleteNode(int id) {
+        if (this.root != null) {
+            if (this.root.getId() == id) {
                 this.root = null;
-            }else {
+            } else {
                 this.root.deleteNode(id);
             }
-        }else {
+        } else {
             System.out.println("The tree is empty...");
         }
     }
@@ -253,19 +253,19 @@ class HeroNode {
     }
 
     //Define DeleteNode method
-    public void deleteNode(int id){
-        if (this.left != null && this.left.id == id){
+    public void deleteNode(int id) {
+        if (this.left != null && this.left.id == id) {
             this.left = null;
             return;
         }
-        if (this.right != null && this.right.id == id){
+        if (this.right != null && this.right.id == id) {
             this.right = null;
             return;
         }
-        if (this.left != null){
+        if (this.left != null) {
             this.left.deleteNode(id);
         }
-        if (this.right != null){
+        if (this.right != null) {
             this.right.deleteNode(id);
         }
     }
