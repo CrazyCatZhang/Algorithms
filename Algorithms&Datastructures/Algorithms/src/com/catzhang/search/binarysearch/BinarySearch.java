@@ -1,4 +1,4 @@
-package com.catzhang.search;
+package com.catzhang.search.binarysearch;
 
 import java.util.ArrayList;
 
