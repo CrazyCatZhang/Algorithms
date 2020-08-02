@@ -11,14 +11,22 @@ public class HuffmanCode {
     public static void main(String[] args) {
         String content = "i like like like java do you like a java";
         byte[] bytes = content.getBytes();
-        getHuffmanCode(constructHuffmanTree(getNode(bytes)), "", stringBuilder);
-        System.out.println(Arrays.toString(huffmanZip(bytes, huffmanCode)));
+        huffmanCode(bytes);
     }
 
     //Define a map that stores Huffman coding changes
     public static HashMap<Byte, String> huffmanCode = new HashMap<>();
 
     public static StringBuilder stringBuilder = new StringBuilder();
+
+    //Define HuffmanCode method
+    public static void huffmanCode(byte[] bytes) {
+        ArrayList<Node> nodeArrayList = getNode(bytes);
+        Node node = constructHuffmanTree(nodeArrayList);
+        getHuffmanCode(node, "", stringBuilder);
+        byte[] huffmanZip = huffmanZip(bytes, huffmanCode);
+        System.out.println(Arrays.toString(huffmanZip));
+    }
 
     //Get a byte[] compressed by the Huffman coding table
     public static byte[] huffmanZip(byte[] bytes, HashMap<Byte, String> huffmanCode) {
