@@ -5,13 +5,18 @@ import java.util.*;
 /**
  * @author: crazycatzhang
  * @date: 2020/8/2 10:10 PM
- * @description: Simple implementation of Huffman data compression
+ * @description: Simple implementation of Huffman data compression and decompression
  */
 public class HuffmanCode {
     public static void main(String[] args) {
         String content = "i like like like java do you like a java";
         byte[] bytes = content.getBytes();
-        huffmanCode(bytes);
+        byte[] huffmanCodeCompression = huffmanCodeCompression(bytes);
+        System.out.println(Arrays.toString(huffmanCodeCompression));
+
+        byte[] decode = decode(huffmanCode, huffmanCodeCompression);
+        System.out.println(new String(decode));
+
     }
 
     //Define a map that stores Huffman coding changes
@@ -19,13 +24,73 @@ public class HuffmanCode {
 
     public static StringBuilder stringBuilder = new StringBuilder();
 
+    public static int huffmanCodeStringLength = 0;
+
+    //Define the method of decode
+    public static byte[] decode(HashMap<Byte, String> huffmanCode, byte[] huffmanCodeCompression) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < huffmanCodeCompression.length - 1; i++) {
+            stringBuilder.append(byteToBitString(true, huffmanCodeCompression[i]));
+        }
+        byte lastByte = huffmanCodeCompression[huffmanCodeCompression.length - 1];
+        String lastByteStr = byteToBitString(false, lastByte);
+        if (stringBuilder.length() + lastByteStr.length() != huffmanCodeStringLength) {
+            while (stringBuilder.length() + lastByteStr.length() < huffmanCodeStringLength) {
+                stringBuilder.append(0);
+            }
+        }
+        stringBuilder.append(lastByteStr);
+
+        HashMap<String, Byte> stringByteHashMap = new HashMap<>();
+        for (Map.Entry<Byte, String> entry : huffmanCode.entrySet()) {
+            stringByteHashMap.put(entry.getValue(), entry.getKey());
+        }
+
+        ArrayList<Byte> bytes = new ArrayList<>();
+        for (int i = 0; i < stringBuilder.length(); ) {
+            int count = 1;
+            Byte b = null;
+            while (true) {
+                String str = stringBuilder.substring(i, i + count);
+                b = stringByteHashMap.get(str);
+                if (b == null) {
+                    count++;
+                } else {
+                    break;
+                }
+            }
+            bytes.add(b);
+            i += count;
+        }
+
+        byte[] bytes1 = new byte[bytes.size()];
+        for (int i = 0; i < bytes1.length; i++) {
+            bytes1[i] = bytes.get(i);
+        }
+        return bytes1;
+    }
+
+    //Convert byte to binary string
+    public static String byteToBitString(boolean flag, byte bytes) {
+        int temp = bytes;
+        if (flag) {
+            temp |= 256;
+        }
+        String str = Integer.toBinaryString(temp);
+        if (flag || temp < 0) {
+            return str.substring(str.length() - 8);
+        } else {
+            return str;
+        }
+    }
+
     //Define HuffmanCode method
-    public static void huffmanCode(byte[] bytes) {
+    public static byte[] huffmanCodeCompression(byte[] bytes) {
         ArrayList<Node> nodeArrayList = getNode(bytes);
         Node node = constructHuffmanTree(nodeArrayList);
         getHuffmanCode(node, "", stringBuilder);
         byte[] huffmanZip = huffmanZip(bytes, huffmanCode);
-        System.out.println(Arrays.toString(huffmanZip));
+        return huffmanZip;
     }
 
     //Get a byte[] compressed by the Huffman coding table
@@ -35,6 +100,7 @@ public class HuffmanCode {
                 bytes) {
             stringBuilder.append(huffmanCode.get(byteCode));
         }
+        huffmanCodeStringLength = stringBuilder.length();
         int len = (stringBuilder.length() + 7) / 8;
         byte[] huffmanCodeBytes = new byte[len];
         int index = 0;
