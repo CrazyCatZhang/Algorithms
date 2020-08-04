@@ -100,10 +100,8 @@ class Graph {
 
     //Define the method of DFS
     public void dfs(boolean[] isVisited, int index) {
-        if (!isVisited[index]) {
-            System.out.print(getValueByIndex(index) + "->");
-            isVisited[index] = true;
-        }
+        System.out.print(getValueByIndex(index) + "->");
+        isVisited[index] = true;
         int neighborNode = getFirstNeighbor(index);
         while (neighborNode != -1) {
             if (!isVisited[neighborNode]) {
