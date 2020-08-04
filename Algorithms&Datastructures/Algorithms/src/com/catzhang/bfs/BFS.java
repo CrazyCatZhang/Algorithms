@@ -29,7 +29,6 @@ public class BFS {
         graph.addEdges(6, 6, 1);
 
         graph.bfs();
-        System.out.println();
     }
 }
 
@@ -44,7 +43,6 @@ class Graph {
         this.edges = new int[n][n];
         this.vertexList = new ArrayList<>(n);
         this.numOfEdges = 0;
-        this.isVisited = new boolean[n];
     }
 
     //Add Node
@@ -126,6 +124,7 @@ class Graph {
 
     //Reload BFS
     public void bfs() {
+        this.isVisited = new boolean[this.vertexList.size()];
         for (int i = 0; i < vertexList.size(); i++) {
             if (!isVisited[i]) {
                 bfs(isVisited, i);
