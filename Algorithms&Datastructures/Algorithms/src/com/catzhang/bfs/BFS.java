@@ -11,8 +11,8 @@ import java.util.LinkedList;
  */
 public class BFS {
     public static void main(String[] args) {
-        int n = 5;
-        String[] Vertex = {"A", "B", "C", "D", "E"};
+        int n = 8;
+        String[] Vertex = {"1", "2", "3", "4", "5", "6", "7", "8"};
         Graph graph = new Graph(n);
         for (String vertex :
                 Vertex) {
@@ -20,13 +20,16 @@ public class BFS {
         }
         graph.addEdges(0, 1, 1);
         graph.addEdges(0, 2, 1);
-        graph.addEdges(1, 2, 1);
         graph.addEdges(1, 3, 1);
         graph.addEdges(1, 4, 1);
+        graph.addEdges(3, 7, 1);
+        graph.addEdges(4, 7, 1);
+        graph.addEdges(2, 5, 1);
+        graph.addEdges(2, 6, 1);
+        graph.addEdges(6, 6, 1);
 
         graph.bfs();
         System.out.println();
-        graph.bfs();
     }
 }
 
