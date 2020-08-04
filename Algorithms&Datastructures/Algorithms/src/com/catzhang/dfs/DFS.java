@@ -24,6 +24,8 @@ public class DFS {
         graph.addEdges(1, 4, 1);
 
         graph.dfs();
+        System.out.println();
+        graph.dfs();
     }
 }
 
@@ -117,6 +119,9 @@ class Graph {
             if (!isVisited[i]) {
                 dfs(isVisited, i);
             }
+        }
+        for (int i = 0; i < vertexList.size(); i++) {
+            isVisited[i] = false;
         }
     }
 }
