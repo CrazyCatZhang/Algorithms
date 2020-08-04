@@ -68,4 +68,9 @@ class Graph {
             System.out.println(Arrays.toString(arr));
         }
     }
+
+    //Get the value of index
+    public String getValueByIndex(int index) {
+        return vertexList.get(index);
+    }
 }
