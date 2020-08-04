@@ -7,7 +7,7 @@ package com.catzhang.divideandconquer;
  */
 public class HanoiTower {
     public static void main(String[] args) {
-        hanoiTower(5,'A','B','C');
+        hanoiTower(5, 'A', 'B', 'C');
         System.out.println(count);
     }
 
@@ -15,14 +15,14 @@ public class HanoiTower {
 
     //Define the DAC method
     public static void hanoiTower(int num, char a, char b, char c) {
-        if (num == 1){
+        if (num == 1) {
             System.out.println("The 1 plate from " + a + " to " + c);
             count++;
-        }else {
-            hanoiTower(num - 1,a,c,b);
+        } else {
+            hanoiTower(num - 1, a, c, b);
             System.out.println("The " + num + " plate from " + a + " to " + c);
             count++;
-            hanoiTower(num - 1,b,a,c);
+            hanoiTower(num - 1, b, a, c);
         }
     }
 }
