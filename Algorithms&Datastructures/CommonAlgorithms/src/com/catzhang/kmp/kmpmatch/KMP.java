@@ -1,6 +1,5 @@
-package com.catzhang.kmp.violencematch;
+package com.catzhang.kmp.kmpmatch;
 
-import java.util.Arrays;
 
 /**
  * @author: crazycatzhang
@@ -12,11 +11,11 @@ public class KMP {
         String str1 = "BBC ABCDAB ABCDABCDABDE";
         String str2 = "ABCDABD";
         int[] partialMatchTable = partialMatchTable(str2);
-        System.out.println(kmpSearch(str1, str2, partialMatchTable));
+        System.out.println(kmpMatch(str1, str2, partialMatchTable));
     }
 
     //Define KMP method
-    public static int kmpSearch(String str1, String str2, int[] partialMatchTable) {
+    public static int kmpMatch(String str1, String str2, int[] partialMatchTable) {
         for (int i = 0, j = 0; i < str1.length(); i++) {
             while (j > 0 && str1.charAt(i) != str2.charAt(j)) {
                 j = partialMatchTable[j - 1];
