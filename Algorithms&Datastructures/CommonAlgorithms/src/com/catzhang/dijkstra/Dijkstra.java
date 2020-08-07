@@ -1,6 +1,8 @@
 package com.catzhang.dijkstra;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * @author: crazycatzhang
@@ -30,7 +32,7 @@ public class Dijkstra {
 class Graph {
     public char[] vertex;
     public int[][] matrix;
-    VisitedVertex visitedVertex;
+    public VisitedVertex visitedVertex;
 
     public Graph(char[] vertex, int[][] matrix) {
         this.vertex = vertex;
@@ -57,12 +59,15 @@ class Graph {
 
     //Update the information of vertex
     public void updateVertex(int index) {
+        ArrayList<PathData> pathData = new ArrayList<>();
         int len = 0;
         for (int i = 0; i < this.matrix[index].length; i++) {
             len = this.visitedVertex.distance[index] + this.matrix[index][i];
             if (this.visitedVertex.alreadyVisitedVertex[i] == 0 && len < this.visitedVertex.getDistance(i)) {
                 this.visitedVertex.updatePreVertex(i, index);
                 this.visitedVertex.updateDistance(i, len);
+                pathData.addAll(Collections.singleton(new PathData(this.vertex[index], this.vertex[i], this.matrix[index][i])));
+                System.out.println(pathData);
             }
         }
     }
@@ -119,6 +124,28 @@ class VisitedVertex {
                 "alreadyVisitedVertex=" + Arrays.toString(alreadyVisitedVertex) +
                 ", preVertex=" + Arrays.toString(preVertex) +
                 ", distance=" + Arrays.toString(distance) +
+                '}';
+    }
+}
+
+//Creat path
+class PathData {
+    public char start;
+    public char end;
+    public int weight;
+
+    public PathData(char start, char end, int weight) {
+        this.start = start;
+        this.end = end;
+        this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return "PathData{" +
+                "<" + start +
+                "," + end +
+                "> = " + weight +
                 '}';
     }
 }
