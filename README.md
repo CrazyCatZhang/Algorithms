@@ -1,5 +1,7 @@
 # Algorithms
 
+
+
 ## 1. [DataStructures](https://github.com/CrazyCatZhang/Algorithms/tree/master/Algorithms%26Datastructures/Datastructures/src/com/catzhang)
 
  - ### [SparseArrays](https://github.com/CrazyCatZhang/Algorithms/tree/master/Algorithms%26Datastructures/Datastructures/src/com/catzhang/sparsearrays)
@@ -27,6 +29,8 @@
   - #### [Maze](https://github.com/CrazyCatZhang/Algorithms/tree/master/Algorithms%26Datastructures/Datastructures/src/com/catzhang/recursion/maze)
 
   - #### [EightQueen](https://github.com/CrazyCatZhang/Algorithms/tree/master/Algorithms%26Datastructures/Datastructures/src/com/catzhang/recursion/eightqueen)
+
+
 
 ## 2. [Algorithms](https://github.com/CrazyCatZhang/Algorithms/tree/master/Algorithms%26Datastructures/Algorithms/src/com/catzhang)
 
@@ -83,6 +87,8 @@
 - ### [DFS](https://github.com/CrazyCatZhang/Algorithms/tree/master/Algorithms%26Datastructures/Algorithms/src/com/catzhang/dfs)
 
 - ### [BFS](https://github.com/CrazyCatZhang/Algorithms/tree/master/Algorithms%26Datastructures/Algorithms/src/com/catzhang/bfs)
+
+
 
 ## 3. [CommonAlgorithms](https://github.com/CrazyCatZhang/Algorithms/tree/master/Algorithms%26Datastructures/CommonAlgorithms/src/com/catzhang)
 
