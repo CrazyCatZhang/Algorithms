@@ -72,9 +72,12 @@ public class SingleLinkedListDemo {
 
     //Get the number of the LinkedList data
     public static int getLength(HeroNode head) {
-        HeroNode temp = head;
+        if (head.next == null){
+            return 0;
+        }
+        HeroNode temp = head.next;
         int count = 0;
-        while (temp.next != null) {
+        while (temp != null) {
             count++;
             temp = temp.next;
         }
