@@ -132,7 +132,101 @@ public void deleteNode(int id) {
 }
 ```
 
+## 4. Interview Questions
 
+ - ### Get the number of valid nodes in the singly linked list
+
+```java
+public static int getLength(HeroNode head) {
+    if (head.next == null){
+        return 0;
+    }
+    HeroNode temp = head.next;
+    int count = 0;
+    while (temp != null) {
+        count++;
+        temp = temp.next;
+    }
+    return count;
+}
+```
+
+
+
+ - ### Find the kth node from the bottom in the singly linked list
+
+    - #### Traverse the linked list, get the total length of the linked list length
+
+    - #### Check whether K is within the length of the linked list
+
+    - #### Define auxiliary pointers, traverse (size-index) from the first of the linked list
+
+    - #### If found, return the node, otherwise return null
+
+```java
+public static HeroNode findLastNode(HeroNode head, int index) {
+    if (head.next == null || index > getLength(head)) {
+        return null;
+    }
+    HeroNode temp = head.next;
+    for (int i = 0; i < getLength(head) - index; i++) {
+        temp = temp.next;
+    }
+    return temp;
+}
+```
+
+
+
+ - ### Reversal of singly linked list
+
+    - #### Define a new head node reverseHead
+
+    - #### Define a node to store the next node of the current node
+
+    - #### Define auxiliary pointer to traverse the linked list
+
+    - #### Define the auxiliary pointer to traverse the linked list, take it out every time a node is traversed, and put it at the forefront of the new linked list reverseHead
+
+    - #### Point the Head node of the original linked list to the next node of the reverseHead node
+
+```java
+public static void reverseList(HeroNode head) {
+    if (head.next == null || head.next.next == null) {
+        return;
+    }
+    HeroNode reverseHead = new HeroNode(0, "", "");
+    HeroNode current = head.next;
+    HeroNode next = null;
+    while (current != null) {
+        next = current.next;
+        current.next = reverseHead.next;
+        reverseHead.next = current;
+        current = next;
+    }
+    head.next = reverseHead.next;
+}
+```
+
+
+
+ - ### Print singly linked list from end to beginning
+
+   	- #### Push each node into the stack, and then use the first-in-last-out feature of the stack to achieve the effect of reverse printing
+
+```java
+public static void reversePrint(HeroNode head) {
+    Stack<HeroNode> heroNodeStack = new Stack<>();
+    HeroNode temp = head.next;
+    while (temp != null) {
+        heroNodeStack.add(temp);
+        temp = temp.next;
+    }
+    while (heroNodeStack.size() > 0) {
+        System.out.println(heroNodeStack.pop());
+    }
+}
+```
 
 
 
