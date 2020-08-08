@@ -1,4 +1,4 @@
-package com.catzhang.search.linersearch;
+package com.catzhang.search.linearsearch;
 
 /**
  * @author: crazycatzhang
