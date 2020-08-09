@@ -2,7 +2,7 @@
 
 ## 1. Basic Introduction
 
-	- ##### Use the array to simulate the use of the stack. Since the stack is an ordered list, of course, you can use the structure of the array to store the data content of the stack. Next, we will use the array to simulate the stacking and stacking operations.
+ - ##### Use the array to simulate the use of the stack. Since the stack is an ordered list, of course, you can use the structure of the array to store the data content of the stack. Next, we will use the array to simulate the stacking and stacking operations
 
 ## 2. Achieve
 
