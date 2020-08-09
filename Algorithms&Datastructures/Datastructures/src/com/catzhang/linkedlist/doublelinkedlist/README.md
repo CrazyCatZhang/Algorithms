@@ -34,7 +34,7 @@ public void show() {
 
  - ##### Add operation: add to the end of the doubly linked list
 
-  - ###### Find the end node through auxiliary pointer traversal
+   - ###### Find the end node through auxiliary pointer traversal
 
   - ###### Point the end node to the target node
 
