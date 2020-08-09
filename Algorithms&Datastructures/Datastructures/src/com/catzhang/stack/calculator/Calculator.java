@@ -112,7 +112,6 @@ class ArraysStack {
 
     //Determines whether the char is operator
     public boolean isOperator(char ch) {
-//        return (ch == '+' || ch == '-' || ch = '*' || ch == '/');
         if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
             return true;
         }
