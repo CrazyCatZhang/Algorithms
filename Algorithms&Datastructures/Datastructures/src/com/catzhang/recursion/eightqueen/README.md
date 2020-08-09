@@ -86,7 +86,7 @@
 
 - ##### Let the queen go from the lever row
 
-  - ###### When the level is equal to the maximum number of rows, it means that the eight queens have been placed in the correct position, the counter is increased by one, and then backtracking to the previous level
+  - ###### When the `level` is equal to the maximum number of rows, it means that the eight queens have been placed in the correct position, the counter is increased by one, and then backtracking to the previous level
 
     ```java
     if (level == rowMax || level == columnMax){
