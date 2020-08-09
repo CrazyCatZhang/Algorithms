@@ -2,19 +2,19 @@
 
 ## 1. Basic Introduction
 
- - ### The singly linked list nodes include data domain and next domain, data domain stores data, and next domain stores the address of the next node
+ - ##### The singly linked list nodes include data domain and next domain, data domain stores data, and next domain stores the address of the next node
 
- - ### Head node points to the start node
+ - ##### Head node points to the start node
 
- - ### The end node has no successor, the next field points to null
+ - ##### The end node has no successor, the next field points to null
 
 ## 2. Applications
 
- - ### Use the single-linked list with head to realize the leaderboard management of Water Margin heroes to complete the addition, deletion, and modification of heroes
+ - ##### Use the single-linked list with head to realize the leaderboard management of Water Margin heroes to complete the addition, deletion, and modification of heroes
 
 ## 3. Achieve
 
- - ### Create Head node
+ - ##### Create Head node
 
 ```java
 private HeroNode head = new HeroNode(0, "", "");
@@ -22,11 +22,11 @@ private HeroNode head = new HeroNode(0, "", "");
 
 
 
- - ### Add operation: directly add to the end of the linked list
+ - ##### Add operation: directly add to the end of the linked list
 
-    - #### If the linked list is empty, point the Head node to the target node to be added
+    - ###### If the linked list is empty, point the Head node to the target node to be added
 
-    - #### If the linked list is not empty, traverse the entire linked list through the auxiliary pointer to obtain the final node, and then point it to the target node to be added
+    - ###### If the linked list is not empty, traverse the entire linked list through the auxiliary pointer to obtain the final node, and then point it to the target node to be added
 
 ```java
 public void addNode(HeroNode node) {
@@ -43,15 +43,15 @@ public void addNode(HeroNode node) {
 
 
 
-- ### Add operation: insert the hero into the specified position according to the ranking
+- ##### Add operation: insert the hero into the specified position according to the ranking
 
-  - #### Define the auxiliary pointer temp to point it to the Head node
+  - ###### Define the auxiliary pointer temp to point it to the Head node
 
-  - #### Compare the ranking of the next node of temp with the target node to be added, and find the position of the target node to be added
+  - ###### Compare the ranking of the next node of temp with the target node to be added, and find the position of the target node to be added
 
-  - #### Point the target node to the next node of temp
+  - ###### Point the target node to the next node of temp
 
-  - #### Point temp to the target node
+  - ###### Point temp to the target node
 
 ```java
 public void addNodeOrder(HeroNode node) {
@@ -81,7 +81,7 @@ public void addNodeOrder(HeroNode node) {
 
 
 
-- ### Modify node information: traverse the linked list through the auxiliary pointer to find the location of the target node, and then change its node information
+- ##### Modify node information: traverse the linked list through the auxiliary pointer to find the location of the target node, and then change its node information
 
 ```java
 public void modifyNode(HeroNode node) {
@@ -108,7 +108,7 @@ public void modifyNode(HeroNode node) {
 
 
 
-- ### Delete node: find the previous node temp of the target node, and then point temp to the next node of the target node
+- ##### Delete node: find the previous node temp of the target node, and then point temp to the next node of the target node
 
 ```java
 public void deleteNode(int id) {
@@ -134,7 +134,7 @@ public void deleteNode(int id) {
 
 ## 4. Interview Questions
 
- - ### Get the number of valid nodes in the singly linked list
+ - ##### Get the number of valid nodes in the singly linked list
 
 ```java
 public static int getLength(HeroNode head) {
@@ -153,15 +153,15 @@ public static int getLength(HeroNode head) {
 
 
 
- - ### Find the kth node from the bottom in the singly linked list
+ - ##### Find the kth node from the bottom in the singly linked list
 
-    - #### Traverse the linked list, get the total length of the linked list length
+    - ###### Traverse the linked list, get the total length of the linked list length
 
-    - #### Check whether K is within the length of the linked list
+    - ###### Check whether K is within the length of the linked list
 
-    - #### Define auxiliary pointers, traverse (size-index) from the first of the linked list
+    - ###### Define auxiliary pointers, traverse (size-index) from the first of the linked list
 
-    - #### If found, return the node, otherwise return null
+    - ###### If found, return the node, otherwise return null
 
 ```java
 public static HeroNode findLastNode(HeroNode head, int index) {
@@ -178,17 +178,17 @@ public static HeroNode findLastNode(HeroNode head, int index) {
 
 
 
- - ### Reversal of singly linked list
+ - ##### Reversal of singly linked list
 
-    - #### Define a new head node reverseHead
+    - ###### Define a new head node reverseHead
 
-    - #### Define a node to store the next node of the current node
+    - ###### Define a node to store the next node of the current node
 
-    - #### Define auxiliary pointer to traverse the linked list
+    - ###### Define auxiliary pointer to traverse the linked list
 
-    - #### Define the auxiliary pointer to traverse the linked list, take it out every time a node is traversed, and put it at the forefront of the new linked list reverseHead
+    - ###### Define the auxiliary pointer to traverse the linked list, take it out every time a node is traversed, and put it at the forefront of the new linked list reverseHead
 
-    - #### Point the Head node of the original linked list to the next node of the reverseHead node
+    - ###### Point the Head node of the original linked list to the next node of the reverseHead node
 
 ```java
 public static void reverseList(HeroNode head) {
@@ -210,9 +210,9 @@ public static void reverseList(HeroNode head) {
 
 
 
- - ### Print singly linked list from end to beginning
+ - ##### Print singly linked list from end to beginning
 
-   	- #### Push each node into the stack, and then use the first-in-last-out feature of the stack to achieve the effect of reverse printing
+   	- ###### Push each node into the stack, and then use the first-in-last-out feature of the stack to achieve the effect of reverse printing
 
 ```java
 public static void reversePrint(HeroNode head) {
