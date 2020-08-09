@@ -8,19 +8,19 @@
 
 ## 2. Solutions
 
- - ##### For example: ==(3+4)×5-6== corresponds to the suffix expression ==3 4 + 5 × 6 -==, the evaluation steps for the suffix expression are as follows:
+ - ##### For example: `(3+4)×5-6`​ corresponds to the suffix expression `3​ 4​ +​ 5​ ×​ 6​ -​`, the evaluation steps for the suffix expression are as follows:
 
     - ###### Scan from left to right, push 3 and 4 onto the stack
 
-    - ###### Encountered the ==+== operator, so pop 4 and 3 (4 is the top element on the stack, 3 is the next top element), calculate the value of ==3+4==, get 7, and then push 7 onto the stack
+    - ###### Encountered the `+` operator, so pop 4 and 3 (4 is the top element on the stack, 3 is the next top element), calculate the value of `3+4​`, get 7, and then push 7 onto the stack
 
     - ###### Push 5 onto the stack
 
-    - ###### Next is the ==x== operator, so pop 5 and 7, calculate ==7x5=35==, and put 35 on the stack
+    - ###### Next is the `×​ `operator, so pop 5 and 7, calculate `7×5=35`, and put 35 on the stack
 
     - ###### Push 6 into the stack
 
-   	- ###### The last is the ==-== operator, which calculates the value of ==35-6==, which is 29, which gives the final result
+   	- ###### The last is the - operator, which calculates the value of `35-6`​, which is 29, which gives the final result
 
 ## 3. Achieve
 
