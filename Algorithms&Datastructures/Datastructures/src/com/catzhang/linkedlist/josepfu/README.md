@@ -2,17 +2,17 @@
 
 ## 1. Problem Description
 
- - ### Suppose n people numbered 1, 2,... n sit in a circle, and the person numbered k (1<=k<=n) shall start counting from 1, and the person who counts to m will go out. The next digit starts to count from 1, and the person who counts to m goes out again, and so on, until everyone goes out, thus generating a sequence of dequeue numbers
+ - ##### Suppose n people numbered 1, 2,... n sit in a circle, and the person numbered k (1<=k<=n) shall start counting from 1, and the person who counts to m will go out. The next digit starts to count from 1, and the person who counts to m goes out again, and so on, until everyone goes out, thus generating a sequence of dequeue numbers
 
 ## 2. Solutions
 
- - ### Use a circular linked list without a leading node to deal with Josephu's problem: first form a single circular linked list with n nodes, and then count from 1 from the k node. When m is counted, the corresponding node is deleted from the linked list , And then count from 1 to the next node to be deleted, until the last node is deleted from the linked list and the algorithm ends.
+ - ##### Use a circular linked list without a leading node to deal with Josephu's problem: first form a single circular linked list with n nodes, and then count from 1 from the k node. When m is counted, the corresponding node is deleted from the linked list , And then count from 1 to the next node to be deleted, until the last node is deleted from the linked list and the algorithm ends.
 
 ## 3. Achieve
 
- - ### Create circular linked list
+ - ##### Create circular linked list
 
-    - #### Define the **first** node as the starting node and initialize it to null
+    - ###### Define the ==first== node as the starting node and initialize it to null
 
    ```java
    private Boy first = null;
@@ -20,7 +20,7 @@
 
    
 
-    - #### Add operation: define an auxiliary pointer (initialized to null), if it is to add the first node, assign the first node to **first**, point **first** to **first**, and then assign first to the auxiliary pointer. Otherwise, point the auxiliary pointer to the target node, then point the target node to the first node, and finally assign the target node to the auxiliary pointer.
+    - ###### Add operation: define an auxiliary pointer (initialized to null), if it is to add the first node, assign the first node to ==first==, point ==first== to ==first==, and then assign first to the auxiliary pointer. Otherwise, point the auxiliary pointer to the target node, then point the target node to the first node, and finally assign the target node to the auxiliary pointer.
 
    ```java
    public void addNode(int num) {
@@ -47,7 +47,7 @@
 
    
 
-   	- #### Traversal operation: define the auxiliary pointer **currentBoy** to point to **first**, and traverse the entire linked list through the while loop until the end of **currentBoy.next == first**
+   - ######  Traversal operation: define the auxiliary pointer ==currentBoy== to point to ==first==, and traverse the entire linked list through the while loop until the end of ==currentBoy.next == first==
 
    ```java
    public void show() {
@@ -68,15 +68,15 @@
 
    
 
-- ### The child goes out of the circle (count from K, count M)
+- ##### The child goes out of the circle (count from K, count M)
 
-  - #### Create a helper pointer **helper** to point to the last node of the linked list
+  - ###### Create a helper pointer ==helper== to point to the last node of the linked list
 
-  - #### Before the child reports the count, move the **helper** and **first** **K-1** times at the same time
+  - ###### Before the child reports the count, move the ==helper== and ==first== ==K-1== times at the same time
 
-  - #### When the child counts, move **first** and **helper** **M -1** times at the same time
+  - ###### When the child counts, move ==first== and ==helper== ==M -1== times at the same time
 
-  - #### Move the child pointed to **first** out of the circle
+  - ###### Move the child pointed to ==first== out of the circle
 
 ```java
 public void countBoy(int num, int key, int count) {
