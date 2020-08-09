@@ -20,7 +20,7 @@
 
     - ###### Push 6 into the stack
 
-   	- ###### The last is the - operator, which calculates the value of `35-6`​, which is 29, which gives the final result
+   	- ###### The last is the `-` operator, which calculates the value of `35-6`​, which is 29, which gives the final result
 
 ## 3. Achieve
 
