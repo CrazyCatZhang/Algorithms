@@ -36,9 +36,9 @@ public void show() {
 
    - ###### Find the end node through auxiliary pointer traversal
 
-  - ###### Point the end node to the target node
+   - ###### Point the end node to the target node
 
-  - ###### Point the predecessor pointer of the target node to the original end node
+   - ###### Point the predecessor pointer of the target node to the original end node
 
 ```java
 public void addNode(HeroDoubleNode node) {
