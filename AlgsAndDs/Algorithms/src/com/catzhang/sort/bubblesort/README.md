@@ -8,9 +8,27 @@
 
  - ##### Because each element keeps approaching its position during the sorting process, if there is no exchange in a comparison, the sequence is in order. Therefore, a flag flag must be set during the sorting process to determine whether the element has been exchanged. Thereby reducing unnecessary comparisons
 
-## 3. Idea Diagram
+## 3. [Idea Diagram](https://www.programiz.com/dsa/bubble-sort)
 
-![img](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghljozsmd6g30my075wqv.gif)
+ - ##### Starting from the first index, compare the first and the second elements.If the first element is greater than the second element, they are swapped.
+
+   ##### Now, compare the second and the third elements. Swap them if they are not in order.
+
+   ##### The above process goes on until the last element.
+
+   ![Bubble Sort Steps](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghlr0hbe7rj30bz0g2t9b.jpg)
+
+- ##### The same process goes on for the remaining iterations. After each iteration, the largest element among the unsorted elements is placed at the end.
+
+  ##### In each iteration, the comparison takes place up to the last unsorted element.
+
+  ##### The array is sorted when all the unsorted elements are placed at their correct positions.
+
+  ![Bubble Sort Steps](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghlr0u9ou0j30bz0d8gm1.jpg)
+
+  ![Bubble Sort Steps](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghlr16xg1fj30bz0aeaab.jpg)
+
+  ![Bubble Sort steps](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghlr1ei39ej30bz07kdfx.jpg)
 
 ## 4. Achieve
 
