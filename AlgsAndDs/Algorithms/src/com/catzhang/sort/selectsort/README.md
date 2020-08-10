@@ -24,7 +24,7 @@
 
 - ##### For each iteration, indexing starts from the first unsorted element. Step 1 to 3 are repeated until all the elements are placed at their correct positions.
 
-  ![Selection Sort Steps](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghlr58o71aj30u00yk76q.jpg)
+  ![Selection Sort Steps](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghlr8guufyj30u00yk76q.jpg)
 
   ![Selection sort steps](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghlr5koe6bj30u00ssdhr.jpg)
 
