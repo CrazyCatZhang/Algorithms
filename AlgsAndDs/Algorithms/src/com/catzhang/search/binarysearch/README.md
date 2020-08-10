@@ -8,7 +8,7 @@
 
  - ##### Binary search can be implemented only on a sorted list of items. If the elements are not sorted already, we need to sort them first
 
-## 2. [Idea Digram](https://www.programiz.com/dsa/binary-search)
+## 2. [Idea Diagram](https://www.programiz.com/dsa/binary-search)
 
  - ##### Binary Search Algorithm can be implemented in two ways which are discussed below
 
