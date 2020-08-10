@@ -40,7 +40,7 @@
 
     - #### [SelectSort](https://github.com/CrazyCatZhang/Algorithms/tree/master/AlgsAndDs/Algorithms/src/com/catzhang/sort/selectsort)
 
-    - #### [QuickSort](https://github.com/CrazyCatZhang/Algorithms/tree/master/AlgsAndDs/Algorithms/src/com/catzhang/sort/selectsort)
+    - #### [QuickSort](https://github.com/CrazyCatZhang/Algorithms/tree/master/AlgsAndDs/Algorithms/src/com/catzhang/sort/quicksort)
 
     - #### [InsertSort](https://github.com/CrazyCatZhang/Algorithms/tree/master/AlgsAndDs/Algorithms/src/com/catzhang/sort/insertsort)
 
