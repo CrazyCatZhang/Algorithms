@@ -4,7 +4,7 @@
 
  - ##### Linear search is the simplest searching algorithm that searches for an element in a list in sequential order. We start at one end and check every element until the desired element is not found.
 
-## 2. [Idea Digram](https://www.programiz.com/dsa/linear-search)
+## 2. [Idea Diagram](https://www.programiz.com/dsa/linear-search)
 
  - ##### The following steps are followed to search for an element `k = 1` in the list below
 
