@@ -58,7 +58,7 @@
 
 ##### You can understand the working of quicksort with the help of the illustrations below.
 
-![Quick Sort Steps](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghls0sfy4bj31m00q2di9.jpg)
+![Quick Sort Steps](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghlsn8b917j31m00q2di9.jpg)
 
 ![Quick Sort Steps](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghls1580aaj31gk0u041n.jpg)
 
