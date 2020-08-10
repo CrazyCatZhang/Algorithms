@@ -4,7 +4,7 @@
 
  - ##### Quick sort is an improvement to bubble sort. The basic idea is: divide the data to be sorted into two independent parts by sorting, and all the data in one part is smaller than all the data in the other part, and then quickly sort the two parts of the data according to this method. The entire sorting process can be carried out recursively, so that the entire data becomes an ordered sequence
 
-## 2. [Idea Digram](https://www.programiz.com/dsa/quick-sort)
+## 2. [Idea Diagram](https://www.programiz.com/dsa/quick-sort)
 
  - ##### A pivot element is chosen from the array. You can choose any element from the array as the pivot element.
 
