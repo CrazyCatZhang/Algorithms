@@ -10,7 +10,7 @@
 
 ![Radix Sort Working](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghlvwj2zb8j30jk0ikaao.jpg)
 
-## 2. [Idea Digram](https://www.programiz.com/dsa/radix-sort)
+## 2. [Idea Diagram](https://www.programiz.com/dsa/radix-sort)
 
  - ##### Find the largest element in the array, i.e. max. Let `X` be the number of digits in `max`. `X` is calculated because we have to go through all the significant places of all elements
 
