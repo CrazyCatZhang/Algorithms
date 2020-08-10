@@ -8,7 +8,11 @@
 
  - ##### Because each element keeps approaching its position during the sorting process, if there is no exchange in a comparison, the sequence is in order. Therefore, a flag flag must be set during the sorting process to determine whether the element has been exchanged. Thereby reducing unnecessary comparisons
 
-## 3. Achieve
+## 3. Idea Diagram
+
+![img](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghljozsmd6g30my075wqv.gif)
+
+## 4. Achieve
 
  - ##### Define temporary variables to store exchanged values
 
