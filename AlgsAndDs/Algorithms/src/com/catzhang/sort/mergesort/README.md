@@ -6,7 +6,7 @@
 
    ![merge sort example](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghluc8y3djj30u00uiabb.jpg)
 
-## 2. Idea Digram
+## 2. [Idea Digram](https://www.programiz.com/dsa/merge-sort)
 
  - #### Divide and Conquer Strategy
 
