@@ -6,7 +6,7 @@
 
  - ##### The basic idea of Insertion Sorting is to treat n elements to be sorted as an ordered list and an unordered list. At the beginning, the ordered list contains only one element, and the unordered list contains n-1 Elements, each time the first element is taken from the unordered list during the sorting process, its sort code is compared with the sort code of the ordered list elements in turn, and it is inserted into the appropriate position in the ordered list to make Become a new ordered list
 
-## 2. [Idea Digram](https://www.programiz.com/dsa/insertion-sort)
+## 2. [Idea Diagram](https://www.programiz.com/dsa/insertion-sort)
 
  - ##### Suppose we need to sort the following array.
 
