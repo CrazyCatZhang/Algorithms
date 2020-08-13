@@ -6,7 +6,7 @@
 
  - ##### Hill sorting is to group records by a certain increment of the target, and use the direct insertion sorting algorithm to sort each group; as the increment decreases, each group contains more and more keywords. When the increment decreases to 1, The entire file is divided into one group, and the algorithm terminates
 
-## 2. [Idea Digram](https://www.programiz.com/dsa/shell-sort)
+## 2. [Idea Diagram](https://www.programiz.com/dsa/shell-sort)
 
  - ##### Suppose, we need to sort the following array
 
