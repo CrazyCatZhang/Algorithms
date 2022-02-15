@@ -12,11 +12,11 @@
 
 ## 2. Experiment
 
- - ##### [SingleLinkedList](https://github.com/CrazyCatZhang/Algorithms/tree/master/Algorithms%26Datastructures/Datastructures/src/com/catzhang/linkedlist/singlelinkedlist)
+ - ##### [SingleLinkedList](https://github.com/CrazyCatZhang/Algorithms/tree/master/AlgsAndDs/Datastructures/src/com/catzhang/linkedlist/singlelinkedlist)
 
- - ##### [DoubleLinkedList](https://github.com/CrazyCatZhang/Algorithms/tree/master/Algorithms%26Datastructures/Datastructures/src/com/catzhang/linkedlist/doublelinkedlist)
+ - ##### [DoubleLinkedList](https://github.com/CrazyCatZhang/Algorithms/tree/master/AlgsAndDs/Datastructures/src/com/catzhang/linkedlist/doublelinkedlist)
 
- - ##### [CirclarLinkedList](https://github.com/CrazyCatZhang/Algorithms/tree/master/Algorithms%26Datastructures/Datastructures/src/com/catzhang/linkedlist/josepfu)
+ - ##### [CirclarLinkedList](https://github.com/CrazyCatZhang/Algorithms/tree/master/AlgsAndDs/Datastructures/src/com/catzhang/linkedlist/josepfu)
 
 
 
